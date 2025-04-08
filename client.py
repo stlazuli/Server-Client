@@ -15,11 +15,9 @@ class SensorClient:
 
     def send_data(self, socket):
         try:
-            # Get sensor ID
             sensor_id = input("Digite o ID do sensor: ")
             socket.sendall(sensor_id.encode() + b'\n')
-            
-            # Simulate data
+
             while True:
                 temp = 20.0 + random.uniform(0, 20)
                 message = f"{sensor_id}:{temp:.1f}\n".encode()
