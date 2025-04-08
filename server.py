@@ -24,7 +24,7 @@ class SensorServer:
     def handle_client(self, client_socket):
         try:
             with client_socket:
-                # Receive sensor ID
+                
                 sensor_id = client_socket.recv(1024).decode().strip()
                 if not sensor_id:
                     print("ID do sensor não recebido")
